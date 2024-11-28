@@ -1,0 +1,125 @@
+* @format
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.phone-dark-number > .PhoneInputInput {
+  border-bottom: 1px solid #595959;
+  border-radius: 4px;
+  background-color: #0d1b2a;
+  height: 40px !important;
+  color: white;
+}
+
+.PhoneInputInput:focus-visible {
+  outline: none;
+  border-color: none;
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 12%),
+    0px 1px 3px rgb(0 0 0 / 20%);
+}
+
+.phone-dark-number > .PhoneInputInput:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #0d1b2a inset !important;
+  -webkit-text-fill-color: white !important;
+}
+
+.PhoneInputInput:hover {
+  border-color: grey;
+}
+
+.phone-dark-number > .PhoneInputCountry {
+  border: 1px solid #595959;
+  border-radius: 4px;
+  background-color: #0d1b2a;
+  height: 40px !important;
+  padding: 5px;
+}
+
+.phone-valid-number > .PhoneInputInput {
+  border: 1px solid #d32f2f;
+  border-radius: 4px;
+  background-color: #0d1b2a;
+  height: 40px !important;
+  color: white;
+}
+
+.phone-valid-number > .PhoneInputCountry {
+  border: 1px solid #d32f2f;
+  border-radius: 4px;
+  background-color: #0d1b2a;
+  height: 40px !important;
+  padding: 5px;
+}
+
+.mainTenance-background {
+  background: linear-gradient(0deg, #11203c 0%, #11203c 100%), #bf886a;
+}
+
+.mainTenance-gradient__left {
+  background: linear-gradient(
+    123deg,
+    #2f25a5 7.74%,
+    #2934ae 22.52%,
+    #1a5ec8 49.96%,
+    #a100a1 71.61%,
+    #03a1f2 89.02%,
+    #00acf9 95.36%
+  );
+
+  filter: blur(150px);
+  width: 308.239px;
+  height: 252.322px;
+  flex-shrink: 0;
+}
+
+.mainTenance-gradient__right {
+  background: linear-gradient(
+    123deg,
+    #2f25a5 7.74%,
+    #2934ae 22.52%,
+    #1a5ec8 49.96%,
+    #a100a1 71.61%,
+    #03a1f2 89.02%,
+    #00acf9 95.36%
+  );
+  filter: blur(150px);
+  width: 308.239px;
+  height: 252.322px;
+  flex-shrink: 0;
+}

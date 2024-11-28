@@ -1,0 +1,43 @@
+version: 0.2
+
+env:
+  variables:
+    ENVIRONMENT: "prod" # Default to 'dev'; can be overridden in CodeBuild or pipeline
+  
+  secrets-manager:
+    NEXT_PUBLIC_API_KEY: !Sub "${ENVIRONMENT}/marchcroft/secrets:NEXT_PUBLIC_API_KEY"
+    NEXT_PUBLIC_BASE_URL: !Sub "${ENVIRONMENT}/marchcroft/secrets:NEXT_PUBLIC_BASE_URL"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 20 # or any other version you're using
+    commands:
+      - echo Installing dependencies...
+      - npm install
+  pre_build:
+    commands:
+      - echo Environment $ENVIRONMENT
+  build:
+    commands:
+      - echo Building the application...
+      - npm run build
+  post_build:
+    commands:
+      - echo Preparing for deployment...
+      - mkdir -p ./dist
+      - cp -r .next ./dist/.next
+      - cp package.json ./dist/package.json
+      - cp next.config.mjs ./dist/next.config.mjs
+      - cp next-i18next.config.js ./dist/next-i18next.config.js
+      - cp postcss.config.mjs ./dist/postcss.config.mjs
+      - cp -r public ./dist/public
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
+
+cache:
+  paths:
+    - node_modules/**/*
